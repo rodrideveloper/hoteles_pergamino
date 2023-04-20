@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hoteles_pergamino/pages/home_page/home_page.dart';
+import 'package:hoteles_pergamino/services/hotel_services.dart';
 
 void main() {
   runApp(const MyApp());
+  HotelServices().getHotels();
 }
 
 class MyApp extends StatelessWidget {
