@@ -4,9 +4,34 @@ import 'package:hoteles_pergamino/services/hotel_services.dart';
 import 'hotel_model.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Hoteles Pergamino'),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text('Inicio'),
+              onTap: () {
+                 Navigator.popUntil(context, ModalRoute.withName('/'));
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.hotel),
+              title: const Text('Ver mapa'),
+              onTap: () {
+                Navigator.pushNamed(context, '/map');
+              },
+            ),
+          ],
+        ),
+      ),
         body: Column(children: [
       FutureBuilder<List<HotelModel>>(
           future: HotelServices().getHotels(),
