@@ -17,6 +17,8 @@ class MyApp extends StatelessWidget {
       home: HomePage(),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
+      theme: ThemeData.from(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple)),
       routes: {
         '/map': (context) => const MapPage(),
       },
