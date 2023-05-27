@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hoteles_pergamino/pages/home_page/home_page.dart';
+import 'package:hoteles_pergamino/pages/home_page/map_page.dart';
 import 'package:hoteles_pergamino/services/hotel_services.dart';
 
 void main() {
@@ -14,6 +15,11 @@ class MyApp extends StatelessWidget {
   Widget build(Object context) {
     return MaterialApp(
       home: HomePage(),
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/map': (context) => const MapPage(),
+      },
     );
   }
 }
